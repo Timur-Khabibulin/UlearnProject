@@ -1,25 +1,23 @@
 package org.example.entities;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-/*public class Exercise {
-    @Id
-    private String name;
-    private int themeName;
-    private int score;
-    private int maxScore;
-}*/
-
 @Data
 @Entity
-public class Exercise  {
+@NoArgsConstructor
+@AllArgsConstructor
+public class Exercise {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
 
     private String name;
+
+    @Enumerated(EnumType.STRING)
+    private ExerciseType exerciseType;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "theme_id")

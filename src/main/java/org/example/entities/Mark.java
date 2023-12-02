@@ -1,11 +1,8 @@
 package org.example.entities;
 
 import lombok.Data;
-import org.springframework.transaction.annotation.Transactional;
-
 import javax.persistence.*;
 
-@Transactional
 @Data
 @Entity
 public class Mark {

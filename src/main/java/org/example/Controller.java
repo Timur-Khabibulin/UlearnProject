@@ -17,9 +17,9 @@ public class Controller {
 
     @GetMapping
     public void doWork() {
-        var all = parser.parse("basicprogramming.csv");
+        parser.parse("basicprogramming.csv");
         System.out.println("parsing end");
-        studentRepository.saveAll(all);
+        studentRepository.saveAll(parser.getStudents());
         System.out.println("saving end");
     }
 }
