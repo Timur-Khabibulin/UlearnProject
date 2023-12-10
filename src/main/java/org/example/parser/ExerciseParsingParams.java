@@ -1,8 +1,8 @@
-package org.example;
+package org.example.parser;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import org.example.entities.Exercise;
+import org.example.db.entities.Exercise;
 
 @AllArgsConstructor
 @Getter

@@ -1,11 +1,11 @@
-package org.example;
+package org.example.parser;
 
 import com.opencsv.CSVParser;
 import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVReaderBuilder;
 import lombok.Getter;
-import org.example.entities.*;
+import org.example.db.entities.*;
 import org.springframework.stereotype.Service;
 
 import java.io.FileReader;
