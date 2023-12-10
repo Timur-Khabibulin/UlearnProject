@@ -1,8 +1,8 @@
-package org.example;
+package org.example.parser;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.example.entities.Theme;
+import org.example.db.entities.Theme;
 
 @Getter
 @Setter

@@ -1,4 +1,4 @@
-package org.example.entities;
+package org.example.db.entities;
 
 public enum ExerciseType {
     HOMEWORK,
