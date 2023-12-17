@@ -1,7 +1,6 @@
 package org.example.db.repositories;
 
 import org.example.db.entities.Student;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

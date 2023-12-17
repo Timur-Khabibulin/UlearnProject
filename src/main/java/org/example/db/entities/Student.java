@@ -1,8 +1,8 @@
 package org.example.db.entities;
 
 import com.vk.api.sdk.objects.base.Sex;
-import lombok.*;
-import org.springframework.transaction.annotation.Transactional;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.List;
