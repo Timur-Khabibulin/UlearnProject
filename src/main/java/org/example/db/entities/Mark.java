@@ -1,6 +1,8 @@
 package org.example.db.entities;
 
 import lombok.Data;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
 
 @Data
@@ -12,7 +14,7 @@ public class Mark {
 
     private int score;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "exercise_id")
     private Exercise exercise;
 

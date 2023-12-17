@@ -3,6 +3,7 @@ package org.example.db.entities;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 
@@ -19,7 +20,7 @@ public class Exercise {
     @Enumerated(EnumType.STRING)
     private ExerciseType exerciseType;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "theme_id")
     private Theme theme;
 }

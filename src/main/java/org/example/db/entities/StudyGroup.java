@@ -11,7 +11,7 @@ public class StudyGroup {
     @Id
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "studyGroup", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "studyGroup", cascade = CascadeType.ALL)
     private List<Student> students;
 
 }

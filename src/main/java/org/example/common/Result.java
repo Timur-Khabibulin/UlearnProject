@@ -41,7 +41,7 @@ public abstract class Result<T> {
         return (Success<T>) this;
     }
 
-    public Result<T> ifSuccess(Consumer<T> action) {
+    public Result<T> onSuccess(Consumer<T> action) {
         if (this.isSuccess())
             action.accept(this.asSuccess().value);
         return this;
@@ -55,9 +55,10 @@ public abstract class Result<T> {
         return (Failure<?>) this;
     }
 
-    public void ifFailure(Consumer<Throwable> action) {
+    public Result<T> onFailure(Consumer<Throwable> action) {
         if (this.isFailure())
             action.accept(this.asFailure().error);
+        return this;
     }
 }
 

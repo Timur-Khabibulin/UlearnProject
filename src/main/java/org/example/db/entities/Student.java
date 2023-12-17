@@ -2,6 +2,7 @@ package org.example.db.entities;
 
 import com.vk.api.sdk.objects.base.Sex;
 import lombok.*;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.*;
 import java.util.List;
@@ -19,11 +20,12 @@ public class Student {
     private Sex sex;
     private String country;
     private String city;
+    private String school;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "study_group_id")
     private StudyGroup studyGroup;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "student", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "student", cascade = CascadeType.ALL)
     private List<Mark> marks;
 }

@@ -15,13 +15,13 @@ import java.util.List;
 import java.util.Objects;
 
 @Service
-public class VKService {
+public class VkApi {
     private final VkApiClient vk;
     private final ServiceActor serviceActor;
 
-    VKService(@Value("${vk.api.app-id}") Integer appId,
-              @Value("${vk.api.service-key}") String clientSecret,
-              @Value("${vk.api.access-token}") String accessToken) {
+    VkApi(@Value("${vk.api.app-id}") Integer appId,
+          @Value("${vk.api.service-key}") String clientSecret,
+          @Value("${vk.api.access-token}") String accessToken) {
         TransportClient transportClient = new HttpTransportClient();
         vk = new VkApiClient(transportClient);
         serviceActor = new ServiceActor(appId, clientSecret, accessToken);
@@ -45,7 +45,9 @@ public class VKService {
                 .fields(Fields.COUNTRY,
                         Fields.CITY,
                         Fields.BDATE,
-                        Fields.SEX)
+                        Fields.SEX,
+                        Fields.SCHOOLS
+                )
                 .lang(Lang.RU)
                 .execute()
         );
