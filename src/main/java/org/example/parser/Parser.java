@@ -10,7 +10,6 @@ import org.springframework.stereotype.Service;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
@@ -18,7 +17,6 @@ import java.util.stream.Collectors;
 public class Parser {
 
     private final CSVParser parser = new CSVParserBuilder().withSeparator(';').build();
-    private final Charset charset = Charset.forName("Cp1251");
     @Getter
     private final ArrayList<Student> students = new ArrayList<>();
     @Getter
@@ -47,7 +45,6 @@ public class Parser {
                 }
             }
         } catch (Exception e) {
-//            e.printStackTrace();
             System.out.printf(e.getMessage());
         }
     }
@@ -60,7 +57,7 @@ public class Parser {
 
     private CSVReader initReader(String fileName) throws IOException {
         return new CSVReaderBuilder(
-                new FileReader(fileName, charset))
+                new FileReader(fileName))
                 .withCSVParser(parser)
                 .build();
     }
